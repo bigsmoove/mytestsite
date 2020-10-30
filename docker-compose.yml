@@ -1,0 +1,17 @@
+# for my nodejs site. not this repo.
+
+version: '3.0' # specify docker-compose version
+
+# Define the services/ containers to be run
+services:
+  angular: # name of the first service
+    build: frontend # specify the directory of the Dockerfile
+    ports:
+      - '4200:4200' # specify port mapping
+    volumes:
+      - ./frontend:/src/app
+
+  express: # name of the second service
+    build: backend # specify the directory of the Dockerfile
+    ports:
+      - '3001:3001' #specify ports mapping
